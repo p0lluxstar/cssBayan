@@ -1,6 +1,7 @@
 body {
     color: #064069;
-    background: #04395e1a;
+   /*  background: #04395e1a; */
+   background: #e4e4e4;
     font-family: 'Open Sans', sans-serif;
 }
 h1{
@@ -22,55 +23,116 @@ input {
 .accordion:last-child{
     margin-bottom: 0;
 }
-.accordion-title {
+.label-mem {
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
-    padding: 1em;
-    background: #04395ecc;
+    align-items: center;
+    padding: 0.7em;
+    background: #055086; 
     font-weight: bold;
     cursor: pointer;
+    border-bottom: 0.1em solid #e4e4e4;
 }
-.accordion-title:hover {
+/* .label-mem:hover {
     background: #04395e;
-}
+} */
 
-input:hover ~ .accordion-content {
+.label-mem:hover ~ .label-content .accordion-content {
     max-height: 100%;
     padding: 1em;
 }
 
-.accordion-title::after {
-    content: "\276F";
-    width: 16px;
-    height: 16px;
-    text-align: center;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
+.label-mem:hover ~ .label-content .img-mem{
+    width: 50%;
+    height: 50%;
+    opacity: 1;
+    transition: all 0.5s;
 }
+
+.label-mem:hover .btn-mem {
+    transition: all 0.5s;
+    transform: rotate(45deg);
+}
+
 .accordion-content {
     max-height: 0;
     padding: 0 1em;
-    color: #04395e;
-    background: white;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-.accordion-content p{
-    margin: 0;
-    color: #04395eb3;
-    font-size: 1em;
-}
-input:checked + .accordion-title {
-    background: #04395e;
-}
-input:checked + .accordion-title::after {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
+    background: white;;
+    transition: all 0.5s;
+    text-align: center;
 }
 
-input:checked ~ .accordion-content {
+.accordion-content:hover{
+    cursor: pointer;
     max-height: 100%;
     padding: 1em;
 }
-  
+
+.accordion-content:hover .img-mem {
+    width: 50%;
+    height: 50%;
+    opacity: 1;
+}
+
+input:checked ~ .label-content .accordion-content {
+    max-height: 100%;
+    padding: 1em;
+}
+
+input:checked ~ .label-mem {
+    font-style: italic;
+}
+
+input:checked ~ .label-content .accordion-content .img-mem{
+    width: 50%;
+    height: 50%;
+    opacity: 1;
+}
+
+.btn-mem{
+    background-image: url(/cssBayan/assets/svg/plus.svg);
+    width: 2em;
+    height: 2em;
+    transition: all 0.5s;
+    transform: rotate(90deg);
+    opacity: 0;
+}
+
+input:checked ~ label .btn-mem {
+    transform: rotate(45deg);
+}
+
+.accordion-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-wrapper:hover .btn-mem {
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+.img-mem{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.accordion-item:hover .label-mem{
+    font-style: italic;
+}
+
+.accordion-item:hover .btn-mem{
+    transform: rotate(45deg);
+}
+
+.accordion-item:active {
+    opacity: 0.7;
+}
+
+@media (max-width: 820px) {
+    .accordion-wrapper{
+        width: 100%;
+    }
+}
