@@ -1,7 +1,7 @@
 body {
     color: #064069;
-   /*  background: #04395e1a; */
-   background: #e4e4e4;
+    /*  background: #04395e1a; */
+    background: #e4e4e4;
     font-family: 'Open Sans', sans-serif;
 }
 h1{
@@ -12,46 +12,25 @@ input {
 }
 .accordion-wrapper {
     overflow: hidden;
-    width: 60%;
+    width: 100%;
     margin:0 auto;
 }
 .accordion-item {
     width: 100%;
-    color: white;
+    color: #ffffff;
     overflow: hidden;
 }
-.accordion:last-child{
-    margin-bottom: 0;
-}
+
 .label-mem {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.7em;
+    padding: 0.5em;
     background: #055086; 
     font-weight: bold;
     cursor: pointer;
     border-bottom: 0.1em solid #e4e4e4;
-}
-/* .label-mem:hover {
-    background: #04395e;
-} */
-
-.label-mem:hover ~ .label-content .accordion-content {
-    max-height: 100%;
-    padding: 1em;
-}
-
-.label-mem:hover ~ .label-content .img-mem{
-    width: 50%;
-    height: 50%;
-    opacity: 1;
-    transition: all 0.5s;
-}
-
-.label-mem:hover .btn-mem {
-    transition: all 0.5s;
-    transform: rotate(45deg);
+    font-size: 1em;
 }
 
 .accordion-content {
@@ -62,16 +41,9 @@ input {
     text-align: center;
 }
 
-.accordion-content:hover{
-    cursor: pointer;
-    max-height: 100%;
-    padding: 1em;
-}
-
-.accordion-content:hover .img-mem {
-    width: 50%;
-    height: 50%;
-    opacity: 1;
+.accordion-title{
+    display: flex;
+    justify-content: space-between;
 }
 
 input:checked ~ .label-content .accordion-content {
@@ -84,32 +56,22 @@ input:checked ~ .label-mem {
 }
 
 input:checked ~ .label-content .accordion-content .img-mem{
-    width: 50%;
-    height: 50%;
+    width: 90%;
+    height: 90%;
     opacity: 1;
 }
 
 .btn-mem{
-    background-image: url(/cssBayan/assets/svg/plus.svg);
+    background-image: url(../cssBayan/assets/svg/plus.svg);
     width: 2em;
     height: 2em;
     transition: all 0.5s;
     transform: rotate(90deg);
-    opacity: 0;
+    opacity: 1;
 }
 
 input:checked ~ label .btn-mem {
     transform: rotate(45deg);
-}
-
-.accordion-title{
-    display: flex;
-    justify-content: space-between;
-}
-
-.accordion-wrapper:hover .btn-mem {
-    transition: all 0.5s;
-    opacity: 1;
 }
 
 .img-mem{
@@ -119,20 +81,85 @@ input:checked ~ label .btn-mem {
     transition: all 0.5s;
 }
 
-.accordion-item:hover .label-mem{
-    font-style: italic;
+
+@media (min-width: 481px){
+    input:checked ~ .label-content .accordion-content .img-mem{
+        width: 60%;
+        height: 60%;
+    }
+    .label-mem{
+        font-size: 1.1em;
+    }
 }
 
-.accordion-item:hover .btn-mem{
-    transform: rotate(45deg);
-}
-
-.accordion-item:active {
-    opacity: 0.7;
-}
-
-@media (max-width: 820px) {
+@media (min-width: 821px) {
     .accordion-wrapper{
-        width: 100%;
+        width: 60%;
+    }
+
+    .btn-mem{
+        opacity: 0;
+    }
+
+    .accordion-item:active {
+        opacity: 0.7;
+    }
+
+    input:checked ~ .label-content .accordion-content .img-mem{
+        width: 50%;
+        height: 50%;
+    }
+
+    .label-mem{
+        font-size: 1.2em;
+    }
+
+    .label-mem:hover ~ .label-content .accordion-content {
+        max-height: 100%;
+        padding: 1em;
+    }
+    
+    .label-mem:hover ~ .label-content .img-mem{
+        width: 50%;
+        height: 50%;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    
+    .label-mem:hover .btn-mem {
+        transition: all 0.5s;
+        transform: rotate(45deg);
+    }
+
+    .accordion-content:hover{
+        cursor: pointer;
+        max-height: 100%;
+        padding: 1em;
+    }
+    
+    .accordion-content:hover .img-mem {
+        width: 50%;
+        height: 50%;
+        opacity: 1;
+    }
+
+    .accordion-wrapper:hover .btn-mem {
+        transition: all 0.5s;
+        opacity: 1;
+    }
+
+    .accordion-item:hover .label-mem{
+        font-style: italic;
+    }
+    
+    .accordion-item:hover .btn-mem{
+        transform: rotate(45deg);
+    }
+}
+
+@media (min-width: 1441px){
+    input:checked ~ .label-content .accordion-content .img-mem{
+        width: 40%;
+        height: 40%;
     }
 }
