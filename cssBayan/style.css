@@ -34,9 +34,10 @@ input {
 }
 
 .accordion-content {
-    max-height: 0;
+    display: flex;
+    justify-content: center;
     padding: 0 1em;
-    background: white;;
+    background: #ffffff;;
     transition: all 0.5s;
     text-align: center;
 }
@@ -159,6 +160,16 @@ input:checked ~ label .btn-mem {
 
 @media (min-width: 1441px){
     input:checked ~ .label-content .accordion-content .img-mem{
+        width: 40%;
+        height: 40%;
+    }
+
+    .accordion-content:hover .img-mem {
+        width: 40%;
+        height: 40%;
+    }
+
+    .label-mem:hover ~ .label-content .img-mem{
         width: 40%;
         height: 40%;
     }
