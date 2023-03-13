@@ -63,16 +63,16 @@ input:checked ~ .label-content .accordion-content .img-mem{
 }
 
 .btn-mem{
-    background-image: url(../cssBayan/assets/svg/plus.svg);
+    background-image: url(../cssBayan/assets/svg/arrow.svg);
     width: 2em;
     height: 2em;
     transition: all 0.5s;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
     opacity: 1;
 }
 
 input:checked ~ label .btn-mem {
-    transform: rotate(45deg);
+    transform: rotate(90deg);
 }
 
 .img-mem{
@@ -129,7 +129,7 @@ input:checked ~ label .btn-mem {
     
     .label-mem:hover .btn-mem {
         transition: all 0.5s;
-        transform: rotate(45deg);
+        transform: rotate(90deg);
     }
 
     .accordion-content:hover{
@@ -154,7 +154,7 @@ input:checked ~ label .btn-mem {
     }
     
     .accordion-item:hover .btn-mem{
-        transform: rotate(45deg);
+        transform: rotate(90deg);
     }
 }
 
