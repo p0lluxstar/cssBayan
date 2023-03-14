@@ -70,7 +70,7 @@ input:checked ~ .label-content .accordion-content .img-mem{
 }
 
 .btn-mem{
-    background-image: url(../cssBayan/assets/svg/arrow.svg);
+    background-image: url(assets/svg/arrow.svg);
     width: 2em;
     height: 2em;
     transition: all 0.5s;
@@ -161,6 +161,17 @@ input:checked ~ label .btn-mem {
         .accordion-content:hover .img-mem {
             width: 50%;
             height: 50%;
+        }
+    }
+    @media (min-width: 1441px){
+        .label-mem:hover ~ .label-content .img-mem{
+            width: 40%;
+            height: 40%;
+        }
+
+        .accordion-content:hover .img-mem {
+            width: 40%;
+            height: 40%;
         }
     }
 }
