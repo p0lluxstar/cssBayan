@@ -31,6 +31,13 @@ input {
     cursor: pointer;
     border-bottom: 0.1em solid #e4e4e4;
     font-size: 1em;
+
+}
+
+.label-mem span{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .accordion-content {
@@ -82,6 +89,81 @@ input:checked ~ label .btn-mem {
     transition: all 0.5s;
 }
 
+@media (hover:hover) {
+    .btn-mem{
+        opacity: 0;
+    }
+    
+    .accordion-item:active {
+        opacity: 0.7;
+    }
+ 
+    .label-mem:hover ~ .label-content .accordion-content {
+        max-height: 100%;
+        padding: 1em;
+    }
+    
+    .label-mem:hover ~ .label-content .img-mem{
+        width: 90%;
+        height: 90%;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    
+    .label-mem:hover .btn-mem {
+        transition: all 0.5s;
+        transform: rotate(90deg);
+    }
+    
+    .accordion-content:hover{
+        cursor: pointer;
+        max-height: 100%;
+        padding: 1em;
+    }
+    
+    .accordion-content:hover .img-mem {
+        width: 90%;
+        height: 90%;
+        opacity: 1;
+    }
+    
+    .accordion-wrapper:hover .btn-mem {
+        transition: all 0.5s;
+        opacity: 1;
+    }
+    
+    .accordion-item:hover .label-mem{
+        font-style: italic;
+    }
+    
+    .accordion-item:hover .btn-mem{
+        transform: rotate(90deg);
+    }
+
+    @media (min-width: 481px){
+        .label-mem:hover ~ .label-content .img-mem{
+            width: 60%;
+            height: 60%;
+        }
+
+        .accordion-content:hover .img-mem {
+            width: 60%;
+            height: 60%;
+        }
+    }
+
+    @media (min-width: 821px){
+        .label-mem:hover ~ .label-content .img-mem{
+            width: 50%;
+            height: 50%;
+        }
+
+        .accordion-content:hover .img-mem {
+            width: 50%;
+            height: 50%;
+        }
+    }
+}
 
 @media (min-width: 481px){
     input:checked ~ .label-content .accordion-content .img-mem{
@@ -98,14 +180,6 @@ input:checked ~ label .btn-mem {
         width: 60%;
     }
 
-    .btn-mem{
-        opacity: 0;
-    }
-
-    .accordion-item:active {
-        opacity: 0.7;
-    }
-
     input:checked ~ .label-content .accordion-content .img-mem{
         width: 50%;
         height: 50%;
@@ -114,62 +188,10 @@ input:checked ~ label .btn-mem {
     .label-mem{
         font-size: 1.2em;
     }
-
-    .label-mem:hover ~ .label-content .accordion-content {
-        max-height: 100%;
-        padding: 1em;
-    }
-    
-    .label-mem:hover ~ .label-content .img-mem{
-        width: 50%;
-        height: 50%;
-        opacity: 1;
-        transition: all 0.5s;
-    }
-    
-    .label-mem:hover .btn-mem {
-        transition: all 0.5s;
-        transform: rotate(90deg);
-    }
-
-    .accordion-content:hover{
-        cursor: pointer;
-        max-height: 100%;
-        padding: 1em;
-    }
-    
-    .accordion-content:hover .img-mem {
-        width: 50%;
-        height: 50%;
-        opacity: 1;
-    }
-
-    .accordion-wrapper:hover .btn-mem {
-        transition: all 0.5s;
-        opacity: 1;
-    }
-
-    .accordion-item:hover .label-mem{
-        font-style: italic;
-    }
-    
-    .accordion-item:hover .btn-mem{
-        transform: rotate(90deg);
-    }
 }
 
 @media (min-width: 1441px){
     input:checked ~ .label-content .accordion-content .img-mem{
-        width: 40%;
-        height: 40%;
-    }
-
-    .accordion-content:hover .img-mem {
-        width: 40%;
-        height: 40%;
-    }
-
-    .label-mem:hover ~ .label-content .img-mem{
         width: 40%;
         height: 40%;
     }
