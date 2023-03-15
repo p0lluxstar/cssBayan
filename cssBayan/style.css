@@ -1,0 +1,209 @@
+body {
+    color: #064069;
+    /*  background: #04395e1a; */
+    background: #e4e4e4;
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    text-align:center;
+}
+input {
+    display: none;
+}
+.accordion-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin:0 auto;
+}
+.accordion-item {
+    width: 100%;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.label-mem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    background: #055086; 
+    font-weight: bold;
+    cursor: pointer;
+    border-bottom: 0.1em solid #e4e4e4;
+    font-size: 1em;
+
+}
+
+.label-mem span{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.accordion-content {
+    display: flex;
+    justify-content: center;
+    padding: 0 1em;
+    background: #ffffff;;
+    transition: all 0.5s;
+    text-align: center;
+}
+
+.accordion-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+input:checked ~ .label-content .accordion-content {
+    max-height: 100%;
+    padding: 1em;
+}
+
+input:checked ~ .label-mem {
+    font-style: italic;
+}
+
+input:checked ~ .label-content .accordion-content .img-mem{
+    width: 90%;
+    height: 90%;
+    opacity: 1;
+}
+
+.btn-mem{
+    background-image: url(assets/svg/arrow.svg);
+    width: 2em;
+    height: 2em;
+    transition: all 0.5s;
+    /* transform: rotate(90deg); */
+    opacity: 1;
+}
+
+input:checked ~ label .btn-mem {
+    transform: rotate(90deg);
+}
+
+.img-mem{
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+@media (hover:hover) {
+    .btn-mem{
+        opacity: 0;
+    }
+
+    .accordion-item:active {
+        opacity: 0.7;
+    }
+    
+    .label-mem:hover ~ .label-content .accordion-content {
+        max-height: 100%;
+        padding: 1em;
+    }
+    
+    .label-mem:hover ~ .label-content .img-mem{
+        width: 90%;
+        height: 90%;
+        opacity: 1;
+        transition: all 0.5s;
+    }
+    
+    .label-mem:hover .btn-mem {
+        transition: all 0.5s;
+        transform: rotate(90deg);
+    }
+    
+    .accordion-content:hover{
+        cursor: pointer;
+        max-height: 100%;
+        padding: 1em;
+    }
+    
+    .accordion-content:hover .img-mem {
+        width: 90%;
+        height: 90%;
+        opacity: 1;
+    }
+    
+    .accordion-wrapper:hover .btn-mem {
+        transition: all 0.5s;
+        opacity: 1;
+    }
+    
+    .accordion-item:hover .label-mem{
+        font-style: italic;
+    }
+    
+    .accordion-item:hover .btn-mem{
+        transform: rotate(90deg);
+    }
+
+    @media (min-width: 481px){
+        .label-mem:hover ~ .label-content .img-mem{
+            width: 60%;
+            height: 60%;
+        }
+
+        .accordion-content:hover .img-mem {
+            width: 60%;
+            height: 60%;
+        }
+    }
+
+    @media (min-width: 821px){
+        .label-mem:hover ~ .label-content .img-mem{
+            width: 50%;
+            height: 50%;
+        }
+
+        .accordion-content:hover .img-mem {
+            width: 50%;
+            height: 50%;
+        }
+    }
+    @media (min-width: 1441px){
+        .label-mem:hover ~ .label-content .img-mem{
+            width: 40%;
+            height: 40%;
+        }
+
+        .accordion-content:hover .img-mem {
+            width: 40%;
+            height: 40%;
+        }
+    }
+}
+
+@media (min-width: 481px){
+    input:checked ~ .label-content .accordion-content .img-mem{
+        width: 60%;
+        height: 60%;
+    }
+    .label-mem{
+        font-size: 1.1em;
+    }
+}
+
+@media (min-width: 821px) {
+    .accordion-wrapper{
+        width: 60%;
+    }
+
+    input:checked ~ .label-content .accordion-content .img-mem{
+        width: 50%;
+        height: 50%;
+    }
+
+    .label-mem{
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1441px){
+    input:checked ~ .label-content .accordion-content .img-mem{
+        width: 40%;
+        height: 40%;
+    }
+}
