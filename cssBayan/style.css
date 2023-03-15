@@ -89,19 +89,15 @@ input:checked ~ label .btn-mem {
     transition: all 0.5s;
 }
 
-.btn-mem{
-    opacity: 1;
-}
-
 @media (hover:hover) {
     .btn-mem{
         opacity: 0;
     }
-    
+
     .accordion-item:active {
-        opacity: 1;
+        opacity: 0.7;
     }
- 
+    
     .label-mem:hover ~ .label-content .accordion-content {
         max-height: 100%;
         padding: 1em;
